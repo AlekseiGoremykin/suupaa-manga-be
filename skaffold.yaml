@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: suupaa-manga-be
+build:
+  artifacts:
+    - image: suupaa-manga/content
+      jib:
+        project: org.suupaa.manga:content
+    - image: suupaa-manga/user-profile
+      jib:
+        project: org.suupaa.manga:user-profile
+deploy:
+  kubectl:
+    manifests:
+      - _infra/kubernetes/content-deployment.yml
+      - _infra/kubernetes/user-profile-deployment.yml
