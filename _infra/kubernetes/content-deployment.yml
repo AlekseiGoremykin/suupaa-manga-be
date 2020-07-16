@@ -19,6 +19,17 @@ spec:
           ports:
             - name: http
               containerPort: 8080
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: password
 ---
 apiVersion: v1
 kind: Service
