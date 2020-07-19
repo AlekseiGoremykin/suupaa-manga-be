@@ -17,7 +17,7 @@ public class FEMangaController {
     private FEMangaService contentService;
 
     @GetMapping
-    public String content(Model model) {
+    public String mangas(Model model) {
         model.addAttribute("mangas", contentService.getMangaList());
         return "mangas/list";
     }

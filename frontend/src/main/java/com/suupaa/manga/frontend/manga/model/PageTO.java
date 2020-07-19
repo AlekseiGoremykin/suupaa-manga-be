@@ -6,6 +6,6 @@ import lombok.Data;
 public class PageTO {
 
     private Long id;
-    private String name;
+    private Integer number;
     private Long imageId;
 }

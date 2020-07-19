@@ -25,6 +25,7 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "image_id_generator")
     @Column(name = "id")
     private Long id;
+
     @Lob
     @Column(name = "image")
     private byte[] image;

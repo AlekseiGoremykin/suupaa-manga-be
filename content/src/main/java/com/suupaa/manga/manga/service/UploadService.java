@@ -58,7 +58,7 @@ public class UploadService {
                 final Image savedImage = imageRepository.save(image);
 
                 Page page = new Page();
-                page.setName(entry.getName());
+                page.setNumber(toNumber(entry.getName()));
                 page.setImageId(savedImage.getId());
                 pages.add(page);
             }
@@ -74,5 +74,10 @@ public class UploadService {
         mangaRepository.save(manga);
 
         return savedChapter.getId();
+    }
+
+    private Integer toNumber(String number) {
+        final String onlyDigits = number.replaceAll("[^\\d]", "");
+        return Integer.parseInt(onlyDigits, 10);
     }
 }

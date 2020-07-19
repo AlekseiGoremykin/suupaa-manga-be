@@ -23,8 +23,8 @@ public class Page {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "number")
+    private Integer number;
 
     @Column(name = "image_id")
     private Long imageId;

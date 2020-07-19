@@ -7,7 +7,7 @@
 <body>
 
 <div th:each="page : ${pages}">
-    <div><h1 style="text-align:center" th:text="|page ${page.name}|"></h1></div>
+    <div><h1 style="text-align:center" th:text="|page ${page.number}|"></h1></div>
     <div><img th:src="@{${'http://localhost:8081/images/' + page.imageId}}"/></div>
 </div>
 

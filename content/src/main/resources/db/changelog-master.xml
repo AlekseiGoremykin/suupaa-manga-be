@@ -47,7 +47,7 @@
                 <constraints referencedTableName="chapter" referencedColumnNames="id"
                              foreignKeyName="fk_page_to_chapter"/>
             </column>
-            <column name="name" type="nvarchar"/>
+            <column name="number" type="bigint"/>
             <column name="image_id" type="bigint">
                 <constraints referencedTableName="image" referencedColumnNames="id"
                              foreignKeyName="fk_page_to_image"/>
