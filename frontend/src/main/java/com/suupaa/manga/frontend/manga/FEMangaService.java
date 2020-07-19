@@ -1,4 +1,4 @@
-package com.suupaa.manga.frontend.content;
+package com.suupaa.manga.frontend.manga;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.suupaa.manga.frontend.content.model.ChapterTO;
-import com.suupaa.manga.frontend.content.model.MangaTO;
+import com.suupaa.manga.frontend.manga.model.ChapterTO;
+import com.suupaa.manga.frontend.manga.model.MangaTO;
 
 @Service
 public class FEMangaService {

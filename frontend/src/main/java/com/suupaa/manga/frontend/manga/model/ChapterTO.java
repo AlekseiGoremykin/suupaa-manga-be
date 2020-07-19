@@ -1,4 +1,4 @@
-package com.suupaa.manga.frontend.content.model;
+package com.suupaa.manga.frontend.manga.model;
 
 import java.util.ArrayList;
 import java.util.List;
