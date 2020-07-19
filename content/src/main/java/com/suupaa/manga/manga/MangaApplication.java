@@ -1,12 +1,12 @@
-package com.suupaa.manga.content;
+package com.suupaa.manga.manga;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class MangaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(MangaApplication.class, args);
     }
 }

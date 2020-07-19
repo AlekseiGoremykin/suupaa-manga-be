@@ -3,14 +3,10 @@ spring:
     name: content-api
   jpa:
     show-sql: "true"
-    generate-ddl: "true"
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: none
   datasource:
     url: "jdbc:postgresql://host.docker.internal:5432/postgres"
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
-
-management:
-  endpoints:
-    enabled-by-default: true
-    web.exposure.include: "*"
+  liquibase:
+    change-log: "classpath:/db/changelog-master.xml"
