@@ -17,7 +17,7 @@
 
     <modules>
         <module>user-profile</module>
-        <module>content</module>
+        <module>manga</module>
         <module>frontend</module>
     </modules>
 
@@ -64,6 +64,11 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>1.4.0.Beta2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>1.2.0.Final</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>

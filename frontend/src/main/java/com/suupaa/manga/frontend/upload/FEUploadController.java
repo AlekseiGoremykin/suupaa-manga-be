@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FEUploadController {
 
     @Autowired
-    private FEUploadService uploadService;
+    private UploadGateway uploadService;
 
     @GetMapping
     public String uploadPage(@PathVariable("mangaId") Long mangaId, Model model) {

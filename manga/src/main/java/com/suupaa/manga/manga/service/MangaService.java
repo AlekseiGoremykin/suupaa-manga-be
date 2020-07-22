@@ -30,12 +30,12 @@ public class MangaService {
     }
 
     public MangaTO create(MangaTO mangaTo) {
-        validateContent(mangaTo);
+        validateManga(mangaTo);
         Manga manga = mangaMapper.toMangaEntity(mangaTo);
         return mangaMapper.toMangaTo(mangaRepository.save(manga));
     }
 
-    public void validateContent(MangaTO manga) {
+    public void validateManga(MangaTO manga) {
         if (manga.getName() == null) {
             throw new IllegalArgumentException("Name can not be empty");
         }

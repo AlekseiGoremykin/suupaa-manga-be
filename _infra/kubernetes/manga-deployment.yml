@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: content-deployment
+  name: manga-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: content-api
+      app: manga-api
   template:
     metadata:
       labels:
-        app: content-api
+        app: manga-api
     spec:
       containers:
-        - name: content
-          image: suupaa-manga/content
+        - name: manga
+          image: suupaa-manga/manga
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -30,17 +30,19 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: password
+            - name: SPRING_PROFILES_ACTIVE
+              value: kubernetes
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: content-api
+  name: manga-api
 spec:
   type: NodePort
   selector:
-    app: content-api
+    app: manga-api
   ports:
     - protocol: TCP
-      port: 8080
+      port: 80
       targetPort: 8080
       nodePort: 32001

@@ -14,17 +14,17 @@ import com.suupaa.manga.frontend.manga.model.MangaTO;
 public class FEMangaController {
 
     @Autowired
-    private FEMangaService contentService;
+    private MangaGateway mangaService;
 
     @GetMapping
     public String mangas(Model model) {
-        model.addAttribute("mangas", contentService.getMangaList());
+        model.addAttribute("mangas", mangaService.getMangaList());
         return "mangas/list";
     }
 
     @GetMapping("{id}")
     public String chapters(@PathVariable("id") Long id, Model model) {
-        final MangaTO manga = contentService.getManga(id);
+        final MangaTO manga = mangaService.getManga(id);
         model.addAttribute("chapters", manga.getChapters());
         model.addAttribute("mangaId", manga.getId());
         return "mangas/view";
@@ -32,7 +32,7 @@ public class FEMangaController {
 
     @GetMapping("{mangaId}/chapters/{id}")
     public String pages(@PathVariable("mangaId") Long mangaId, @PathVariable("id") Long chapterId, Model model) {
-        model.addAttribute("pages", contentService.getChapter(mangaId, chapterId).getPages());
+        model.addAttribute("pages", mangaService.getChapter(mangaId, chapterId).getPages());
         return "mangas/pages";
     }
 }

@@ -4,15 +4,19 @@ metadata:
   name: suupaa-manga-be
 build:
   artifacts:
-    - image: suupaa-manga/content
+    - image: suupaa-manga/manga
       jib:
-        project: org.suupaa.manga:content
-#    - image: suupaa-manga/user-profile
-#      jib:
-#        project: org.suupaa.manga:user-profile
+        project: org.suupaa.manga:manga
+    - image: suupaa-manga/user-profile
+      jib:
+        project: org.suupaa.manga:user-profile
+    - image: suupaa-manga/frontend
+      jib:
+        project: org.suupaa.manga:frontend
 deploy:
   kubectl:
     manifests:
-      - _infra/kubernetes/content-deployment.yml
-      #      - _infra/kubernetes/user-profile-deployment.yml
       - _infra/kubernetes/db-secrets.yml
+      - _infra/kubernetes/manga-deployment.yml
+      - _infra/kubernetes/user-profile-deployment.yml
+      - _infra/kubernetes/frontend-deployment.yml

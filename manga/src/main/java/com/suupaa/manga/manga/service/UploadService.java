@@ -42,7 +42,7 @@ public class UploadService {
     @Autowired
     private ChapterMapper chapterMapper;
 
-    public Long upload(Long contentId, ChapterTO chapterTo, InputStream zip) {
+    public Long upload(Long mangaId, ChapterTO chapterTo, InputStream zip) {
         Chapter chapter = chapterMapper.toChapterEntity(chapterTo);
 
         Set<Page> pages = new HashSet<>();
@@ -69,7 +69,7 @@ public class UploadService {
         chapter.setPages(pages);
         final Chapter savedChapter = chapterRepository.save(chapter);
 
-        Manga manga = mangaRepository.getOne(contentId);
+        Manga manga = mangaRepository.getOne(mangaId);
         manga.getChapters().add(savedChapter);
         mangaRepository.save(manga);
 
