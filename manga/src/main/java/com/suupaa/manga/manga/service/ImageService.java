@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.suupaa.manga.manga.entity.Image;
 import com.suupaa.manga.manga.repository.ImageRepository;
 
+import reactor.core.publisher.Mono;
+
 @Service
 @Transactional
 public class ImageService {
@@ -14,8 +16,8 @@ public class ImageService {
     @Autowired
     private ImageRepository imageRepository;
 
-    public byte[] getImage(Long id) {
-        final Image image = imageRepository.getOne(id);
-        return image.getImage();
+    public Mono<byte[]> getImage(String id) {
+        return imageRepository.findById(id)
+                .map(Image::getImage);
     }
 }

@@ -1,16 +1,9 @@
 spring:
   application:
     name: manga-api
-  jpa:
-    show-sql: "true"
-    hibernate.ddl-auto: none
-  datasource:
-    url: "jdbc:postgresql://host.docker.internal:5432/postgres"
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-  liquibase:
-    change-log: "classpath:/db/changelog-master.xml"
-
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/suupaa-manga
 ---
 spring:
   profiles: dev

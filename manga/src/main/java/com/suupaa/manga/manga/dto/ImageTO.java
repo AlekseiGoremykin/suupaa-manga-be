@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class ImageTO {
 
-    private Long id;
+    private String id;
     private byte[] image;
 }

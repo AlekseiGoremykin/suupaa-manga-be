@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class PageTO {
 
-    private Long id;
+    private String id;
     private Integer number;
-    private Long imageId;
+    private String imageId;
 
 }

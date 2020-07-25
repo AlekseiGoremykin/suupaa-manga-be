@@ -1,0 +1,14 @@
+[
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Mob pshyco 100",
+    "genre": "Shounen",
+    "id": "-1"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Promar",
+    "genre": "Shounen",
+    "id": "-2"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "_class": "com.suupaa.manga.manga.entity.Chapter",
+    "name": "Chapter One",
+    "mangaId": "-1",
+    "id": "-1"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Chapter",
+    "name": "Chapter Two",
+    "mangaId": "-1",
+    "id": "-2"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Chapter",
+    "name": "Chapter Three",
+    "mangaId": "-1",
+    "id": "-3"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Chapter",
+    "name": "Chapter 1",
+    "mangaId": "-2",
+    "id": "-11"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Chapter",
+    "name": "Chapter 2",
+    "mangaId": "-2",
+    "id": "-12"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Chapter",
+    "name": "Chapter 3",
+    "mangaId": "-2",
+    "id": "-13"
+  }
+]
