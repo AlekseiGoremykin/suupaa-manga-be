@@ -2,11 +2,12 @@ package com.suupaa.manga.manga.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.suupaa.manga.manga.dto.MangaTO;
@@ -33,8 +34,9 @@ public class MangaController {
     }
 
     @PostMapping
-    public Mono<MangaTO> create(@RequestBody MangaTO manga) {
-        return mangaService.create(manga);
+    public Mono<MangaTO> create(@RequestPart("manga") Mono<MangaTO> manga,
+                                @RequestPart("cover") FilePart cover) {
+        return mangaService.create(manga, cover);
     }
 
 }

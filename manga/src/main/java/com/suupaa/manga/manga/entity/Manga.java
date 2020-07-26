@@ -15,4 +15,5 @@ public class Manga {
     private String id;
     private String name;
     private String genre;
+    private String coverImageId;
 }
