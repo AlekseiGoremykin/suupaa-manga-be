@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: recommendation-api
+  cloud:
+    stream:
+      bindings:
+        manga-rate-stream:
+          nativeDecoding: true
+          destination: manga-rate
+          group: ${spring.application.name}
+          consumer:
+            keySerde: StringSerde
+            valueSerde: JsonSerde
+app-config:
+  trending:
+    windowSize: 5m
+    windowAdvanceBy: 1m
+---
+spring:
+  profiles: dev
+server:
+  port: 8082
+---
+spring:
+  profiles: kubernetes

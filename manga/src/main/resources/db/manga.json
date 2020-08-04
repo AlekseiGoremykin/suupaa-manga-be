@@ -10,5 +10,65 @@
     "name": "Promar",
     "genre": "Shounen",
     "id": "-2"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto",
+    "genre": "Shounen",
+    "id": "-3"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 4",
+    "genre": "Shounen",
+    "id": "-4"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 5",
+    "genre": "Shounen",
+    "id": "-5"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 6",
+    "genre": "Shounen",
+    "id": "-6"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 7",
+    "genre": "Shounen",
+    "id": "-7"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 8",
+    "genre": "Shounen",
+    "id": "-8"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 9",
+    "genre": "Shounen",
+    "id": "-9"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 10",
+    "genre": "Shounen",
+    "id": "-10"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 11",
+    "genre": "Shounen",
+    "id": "-11"
+  },
+  {
+    "_class": "com.suupaa.manga.manga.entity.Manga",
+    "name": "Naruto Season 12",
+    "genre": "Shounen",
+    "id": "-12"
   }
 ]

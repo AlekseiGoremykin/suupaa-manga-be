@@ -5,10 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.codec.multipart.FilePart;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.suupaa.manga.events.ViewEvent;
 import com.suupaa.manga.manga.dto.MangaTO;
 import com.suupaa.manga.manga.entity.Image;
 import com.suupaa.manga.manga.entity.Manga;
@@ -33,12 +36,21 @@ public class MangaService {
     @Autowired
     private ImageRepository imageRepository;
 
+    @Autowired
+    private KafkaTemplate<String, ViewEvent> viewKafkaTemplate;
+
+    @Value("${kafka.topic.manga-view}")
+    private String mangaViewTopic;
+
     public Flux<MangaTO> getMangaList() {
         return mangaRepository.findAll()
                 .map(mangaMapper::toMangaTo);
     }
 
     public Mono<MangaTO> getMangaById(String id) {
+
+        viewKafkaTemplate.send(mangaViewTopic, id, new ViewEvent(System.currentTimeMillis()));
+
         return mangaRepository.findById(id)
                 .map(mangaMapper::toMangaTo);
     }

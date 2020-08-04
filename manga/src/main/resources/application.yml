@@ -4,14 +4,20 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/suupaa-manga
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:9092
+kafka:
+  topic:
+    manga-rate: manga-rate
+    manga-view: manga-view
 ---
 spring:
   profiles: dev
-services:
-  user-profile-api: 'http://localhost:8082'
-
+server:
+  port: 8081
 ---
 spring:
   profiles: kubernetes
-services:
-  user-profile-api: 'http://user-profile-api'
