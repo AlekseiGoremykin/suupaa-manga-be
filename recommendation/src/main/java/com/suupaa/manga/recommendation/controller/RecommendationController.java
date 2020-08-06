@@ -21,12 +21,12 @@ public class RecommendationController {
 
     @GetMapping("top-5-rated-all-time")
     public Flux<MangaRating> mostRatedAllTime() {
-        return recommendationService.mostRatedAllTime().map(MangaRating::from);
+        return recommendationService.mostRatedAllTime();
     }
 
     @GetMapping("trending")
     public Flux<MangaRating> trending() {
-        return recommendationService.trending().map(MangaRating::from);
+        return recommendationService.trending();
     }
 
     @GetMapping("most-viewed-today")

@@ -20,6 +20,5 @@
 
  
 ## TODO
- - make recommendation service scalable
  - unit tests for kafka streams
  - move config to k8s ConfigMap

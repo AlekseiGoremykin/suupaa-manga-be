@@ -11,6 +11,12 @@ spring:
           consumer:
             keySerde: StringSerde
             valueSerde: JsonSerde
+      kafka:
+        streams:
+          binder:
+            configuration:
+              application:
+                server: localhost:${server.port}
 app-config:
   trending:
     windowSize: 5m
