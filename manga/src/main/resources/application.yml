@@ -1,14 +1,10 @@
 spring:
   application:
     name: manga-api
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/suupaa-manga
   kafka:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    bootstrap-servers: localhost:9092
 kafka:
   topic:
     manga-rate: manga-rate
@@ -16,6 +12,11 @@ kafka:
 ---
 spring:
   profiles: dev
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/suupaa-manga
+  kafka:
+    bootstrap-servers: localhost:9092
 server:
   port: 8081
 ---

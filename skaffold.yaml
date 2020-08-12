@@ -7,15 +7,15 @@ build:
     - image: suupaa-manga/manga
       jib:
         project: org.suupaa.manga:manga
-    - image: suupaa-manga/user-profile
+    - image: suupaa-manga/recommendation
       jib:
-        project: org.suupaa.manga:user-profile
-    - image: suupaa-manga/frontend
-      jib:
-        project: org.suupaa.manga:frontend
+        project: org.suupaa.manga:recommendation
 deploy:
   kubectl:
     manifests:
-      - _infra/kubernetes/db-secrets.yml
+      #      - _infra/kubernetes/db-secrets.yml
+      - _infra/kubernetes/kubernetes-config.yml
+      - _infra/kubernetes/configs.yml
       - _infra/kubernetes/manga-deployment.yml
-      - _infra/kubernetes/user-profile-deployment.yml
+      - _infra/kubernetes/recommendation-deployment.yml
+#      - _infra/kubernetes/user-profile-deployment.yml

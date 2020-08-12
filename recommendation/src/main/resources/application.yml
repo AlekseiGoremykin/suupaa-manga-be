@@ -11,12 +11,6 @@ spring:
           consumer:
             keySerde: StringSerde
             valueSerde: JsonSerde
-      kafka:
-        streams:
-          binder:
-            configuration:
-              application:
-                server: localhost:${server.port}
 app-config:
   trending:
     windowSize: 5m
@@ -24,6 +18,14 @@ app-config:
 ---
 spring:
   profiles: dev
+  cloud:
+    stream:
+      kafka:
+        streams:
+          binder:
+            configuration:
+              application:
+                server: localhost:${server.port}
 server:
   port: 8082
 ---

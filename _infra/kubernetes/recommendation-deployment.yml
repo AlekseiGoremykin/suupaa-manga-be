@@ -2,36 +2,41 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: suupaa-manga-dev
-  name: manga-deployment
+  name: recommendation-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: manga-api
+      app: recommendation-api
   template:
     metadata:
       labels:
-        app: manga-api
+        app: recommendation-api
     spec:
       containers:
-        - name: manga
-          image: suupaa-manga/manga
+        - name: recommendation
+          image: suupaa-manga/recommendation
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 8080
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
 ---
 apiVersion: v1
 kind: Service
 metadata:
   namespace: suupaa-manga-dev
-  name: manga-api
+  name: recommendation-api
 spec:
   type: NodePort
   selector:
-    app: manga-api
+    app: recommendation-api
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 32001
+      nodePort: 32002

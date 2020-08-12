@@ -1,0 +1,17 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  namespace: suupaa-manga-dev
+  name: manga-api
+data:
+  spring.data.mongodb.uri: mongodb://host.docker.internal:27017/suupaa-manga
+  spring.kafka.bootstrap-servers: host.docker.internal:9092
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  namespace: suupaa-manga-dev
+  name: recommendation-api
+data:
+  spring.cloud.stream.kafka.streams.binder.configuration.application.server: ${POD_IP}:8080
+  spring.kafka.bootstrap-servers: host.docker.internal:9092
