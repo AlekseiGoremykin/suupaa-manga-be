@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: user-profile-api
+---
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/suupaa-manga
+server:
+  port: 8084
+---
+spring:
+  profiles: kubernetes

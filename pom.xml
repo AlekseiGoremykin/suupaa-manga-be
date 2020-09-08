@@ -24,7 +24,8 @@
         <module>manga</module>
         <module>recommendation</module>
         <module>commons-events</module>
-        <module>authentication</module>
+        <module>commons-identity</module>
+        <module>gateway</module>
     </modules>
 
     <dependencyManagement>
